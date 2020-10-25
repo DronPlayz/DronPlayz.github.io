@@ -4,10 +4,19 @@
         <meta charset="utf-8">
         <title>Bloxian Agents</title>
          <script type = "text/JavaScript">
-         function Hello() {
-            fill('yellow'); 
-            ellipse(mouseX, mouseY, 20, 20); 
-         }
+   canvas.addEventListener("mousemove", setMousePosition, false);
+ 
+      function setMousePosition(e) {
+     mouseX = e.clientX - canvasPos.x;
+    mouseY = e.clientY - canvasPos.y;
+ 
+     context.clearRect(0, 0, canvas.width, canvas.height);
+ 
+  context.beginPath();
+  context.arc(mouseX, mouseY, 50, 0, 2 * Math.PI, true);
+  context.fillStyle = "#FF6A6A";
+  context.fill();
+}
       </script>
         <style>
             .info{
@@ -84,7 +93,7 @@
         }
         </style>
     </head>
-    <body onmouseover="Hello">
+    <body onmouseover=setMousePosition(5);>
         <h1 id="title">Bloxian Agents</h1>
         <img class="centerImg" src="https://t0.rbxcdn.com/40b41c539036a69db97473dc59b0b86f" alt="Bloxian Agents<In Making>:(" thumbnail="{&quot;Final&quot;:true,&quot;Url&quot;:&quot;https://t0.rbxcdn.com/40b41c539036a69db97473dc59b0b86f&quot;,&quot;RetryUrl&quot;:null,&quot;UserId&quot;:0,&quot;EndpointType&quot;:&quot;Avatar&quot;}" image-retry=""Wuts up>
             <h1 id="Devolpers">About</h1>  
